@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//start load
+Cypress.Commands.add('startLoad', (username, password) => {
+  cy.visit('/')
+  cy.get('body').click(0,0);
+ 
+})
+
+//log in
+Cypress.Commands.add('login', (username, password) => {
+  cy.visit('/')
+  cy.get('body').click(0,0);
+  cy.get('.user-menu-wrap.d-lmd-flex').click()
+  cy.get('.user-menu-wrap.d-lmd-flex > .supertips-box > .signin-popup > .signin').click()
+  cy.get('.signin-form > :nth-child(1) > .form-control').type(username)
+  cy.get(':nth-child(2) > .form-control').type(password)
+  cy.get('.pl-lsm-2 > .btn').click()
+})
