@@ -10,7 +10,6 @@ const password = "09369654448"
         cy.login('f.rezaee1991@gmail.com', '09369654448');
        
         
-      //p
       
     })
     

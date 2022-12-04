@@ -26,17 +26,18 @@
 
 //start load
 Cypress.Commands.add('startLoad', (username, password) => {
+  localStorage.setItem("socialPromotNotice", "false")
   cy.visit('/')
-  cy.get('body').click(0,0);
+  // cy.get('body').click(0,0);  //old way to disable telegram noti
  
 })
 
 //log in
 Cypress.Commands.add('login', (username, password) => {
-  cy.visit('/')
-  cy.get('body').click(0,0);
+  cy.startLoad();
   cy.get('.user-menu-wrap.d-lmd-flex').click()
   cy.get('.user-menu-wrap.d-lmd-flex > .supertips-box > .signin-popup > .signin').click()
+  
   cy.get('.signin-form > :nth-child(1) > .form-control').type(username)
   cy.get(':nth-child(2) > .form-control').type(password)
   cy.get('.pl-lsm-2 > .btn').click()
