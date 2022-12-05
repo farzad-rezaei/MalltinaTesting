@@ -9,8 +9,6 @@ const password = "09369654448"
     it( 'logIn an user', ()=>{
         cy.login('f.rezaee1991@gmail.com', '09369654448');
        
-        
-      
     })
     
 })

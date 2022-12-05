@@ -35,10 +35,10 @@ Cypress.Commands.add('startLoad', (username, password) => {
 //log in
 Cypress.Commands.add('login', (username, password) => {
   cy.startLoad();
-  cy.get('.user-menu-wrap.d-lmd-flex').click()
-  cy.get('.user-menu-wrap.d-lmd-flex > .supertips-box > .signin-popup > .signin').click()
+  cy.get('.user-menu-wrap.d-lmd-flex').click({force:true})
+  cy.get('.user-menu-wrap.d-lmd-flex > .supertips-box > .signin-popup > .signin').click({force:true})
   
   cy.get('.signin-form > :nth-child(1) > .form-control').type(username)
   cy.get(':nth-child(2) > .form-control').type(password)
-  cy.get('.pl-lsm-2 > .btn').click()
+  cy.get('.pl-lsm-2 > .btn').click({force:true})
 })
