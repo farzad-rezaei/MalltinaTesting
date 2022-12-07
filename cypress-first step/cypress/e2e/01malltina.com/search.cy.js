@@ -8,16 +8,14 @@ describe("malltin.com search something", ()=>{
         
     })
 
-    // first api chalenge
+  
+    
+
+  // first api chalenge
     // it("spam", ()=>{
     //    fetch('https://api.malltina.com/search/v2?q=headphones').then((response) => {
     //     cy.log(response)
     
     // })
-    
-
 
     // })
-    
-})
-
